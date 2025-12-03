@@ -6,7 +6,7 @@ This part covers the foundational concepts and skills essential for data enginee
 ## Outline
 
 1. [Azure Databricks](#azure-databricks)
-1. [Azure Data Factory](#azure-data-factory)
+1. [Azure Data Factory (Optional)](#azure-data-factory-optional)
 1. [Mermaid Code for Modelling Data and Visualizing](#mermaid-code-for-modelling-data-and-visualizing)
 1. [Get familiar with Data - OpenSky](#get-familiar-with-data---opensky)
 1. [Exercise](#exercise)
@@ -30,7 +30,7 @@ Using the Databricks Workspace and research the following topics:
 - Lakeflow Spark Declarative Pipelines (SDP)
 
 
-## Azure Data Factory
+## Azure Data Factory (Optional)
 In this task you are going to get familiar with the Azure Data Factory, which will be used later in the Data Ingestion feature.  
 
 We advise the following resources for you:

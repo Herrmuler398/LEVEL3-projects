@@ -24,10 +24,6 @@ Medallion architecture reference:
 - https://www.databricks.com/glossary/medallion-architecture
 
 
-Resource for Auto Loader:
-
-- https://learn.microsoft.com/en-us/azure/databricks/ingestion/auto-loader/
-
 Resource for SDP:
 
 - https://learn.microsoft.com/en-us/azure/databricks/ldp/transform
@@ -44,8 +40,6 @@ Resource for SDP:
 The first layer on the Medallion architecture is Bronze layer, where we land all the data from external source systems. The table structures in this layer correspond to the source system table structures "as-is," along with any additional metadata columns that capture the load date/time, process ID, etc.
 
 Lakeflow Spark Declarative Pipelines (SDP) makes it easy to build and manage reliable batch and streaming data pipelines that deliver high-quality data on the Databricks Lakehouse Platform. SDP helps data engineering teams simplify [ETL](https://www.databricks.com/discover/etl) development and management with declarative pipeline development, automatic data testing, and deep visibility for monitoring and recovery.
-
-We will also use Auto Loader to incrementally and efficiently processes new data files as they arrive in cloud storage without any additional setup. Auto Loader provides a Structured Streaming source called cloudFiles. Given an input directory path on the cloud file storage, the cloudFiles source automatically processes new files as they arrive, with the option of also processing existing files in that directory. 
 
 
 ## Silver Layer

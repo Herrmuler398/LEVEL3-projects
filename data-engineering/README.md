@@ -6,14 +6,9 @@ This track will guide you through the essential skills and knowledge needed to b
 
 ## Learning Path
 
-### [Part 0: Pre-Requirements](part-0-Pre-requirements.md)
-- [Basics of SQL](part-0-Pre-requirements.md#basics-of-sql)
-- [Basics of Python](part-0-Pre-requirements.md#basics-of-python)
-- [Basics of Git](part-0-Pre-requirements.md#basics-of-git)
-
 ### [Part 1: Fundamentals](part-1-Fundamentals.md)
 - [Azure Databricks](part-1-Fundamentals.md#azure-databricks)
-- [Azure Data Factory](part-1-Fundamentals.md#azure-data-factory)
+- [Azure Data Factory (Optional)](part-1-Fundamentals.md#optional-azure-data-factory-optional)
 - [Mermaid Code for Modelling Data and Visualizing](part-1-Fundamentals.md#mermaid-code-for-modelling-data-and-visualizing)
 - [Get familiar with Data - OpenSky](part-1-Fundamentals.md#get-familiar-with-data---opensky)
 - [Exercise](part-1-Fundamentals.md#exercise)

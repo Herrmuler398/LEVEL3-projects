@@ -6,9 +6,8 @@ Data ingestion is a critical step in the data pipeline because it sets the found
 
 The data sources for ingestion can include structured data, such as data from a relational database, as well as semi-structured and unstructured data such as text files, logs, social media feeds, and IoT sensors. Data ingestion also involves the application of data governance policies to ensure the accuracy, completeness, and security of the data being ingested.
 
-As part of this track, you will be implementing pipelines within Azure Data Factory for a data engineering project. 
 
-In this task you need to build a pipeline to ingest the raw data from OpenSky API to the Azure Data Lake storage.
+In this task you need to build a data ingestion process to retrieve raw data from OpenSky API and store it in Unity Catalog volumes.
 
 ## Outline
 - [Ingest Flights Data](#ingest-flights-data)
@@ -23,17 +22,17 @@ The following operational data from the OpenSky API should be extracted:
 
 This API call retrieves flights for a certain time interval [begin, end]. If no flights are found for the given time period, HTTP status 404 - Not found is returned with an empty response body.
 
-**Destination path**:  track / incoming / name / opensky / flights
+**Destination**: Unity Catalog volume path: `/Volumes/track/incoming/<name>/opensky/flights`
 
-**Trigger frequency**: Every 2 hours
+**Schedule**: Every 2 hours
 
 ## Ingest State Vectors data
 The following operational data from the OpenSky API should be extracted:
 - All State Vectors - https://openskynetwork.github.io/opensky-api/rest.html#all-state-vectors
 
-**Destination path**:  track / incoming / name / opensky / state_vectors
+**Destination**: Unity Catalog volume path: `/Volumes/track/incoming/<name>/opensky/state_vectors`
 
-**Trigger frequency**: Every 2 hours
+**Schedule**: Every 2 hours
 
 
 
@@ -43,13 +42,13 @@ The following operational data from the OpenSky API should be extracted:
 The aircraft metadata is updated monthly and you can find it here:
 - Metadata - https://opensky-network.org/datasets/#metadata/
 
-**Destination path**:  track / incoming / name / opensky / metadata
+**Destination**: Unity Catalog volume path: `/Volumes/track/incoming/<name>/opensky/metadata`
 
-**Trigger frequency**: Monthly
+**Schedule**: Monthly
 
 ## Deliverables:
-- The raw data is successfully retrieved from the API, ensuring all required data fields are included.
-- The retrieved data is stored in our system using the appropriate data model, organized, and formatted correctly
+- The raw data is successfully retrieved from the OpenSky API, ensuring all required data fields are included.
+- The retrieved data is stored in Unity Catalog volumes using the appropriate data model, organized, and formatted correctly.
 - The ingested data is validated to ensure accuracy and up-to-date information.
-- An Azure Data Factory pipeline is set up with a trigger that regularly retrieves the reference data, considering the infrequent updates for this kind of data.
-- The pipeline and data ingestion process are monitored to ensure smooth and reliable operation.
+- A scheduled data ingestion process is implemented that regularly retrieves the data according to the specified schedules.
+- The data ingestion process is monitored to ensure smooth and reliable operation.
