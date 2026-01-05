@@ -31,6 +31,8 @@ Using the Databricks Workspace and research the following topics:
 
 
 ## Azure Data Factory (Optional)
+> **Note**: Azure Data Factory is optional for this track. You can complete all exercises using Azure Databricks alone. However, learning ADF provides valuable experience with enterprise data orchestration tools and may be beneficial for production environments.
+
 In this task you are going to get familiar with the Azure Data Factory, which will be used later in the Data Ingestion feature.  
 
 We advise the following resources for you:
