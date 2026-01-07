@@ -1,6 +1,6 @@
 # Part 1: Fundamentals
 
-This part covers the foundational concepts and skills essential for data engineering such as foundation for mastering the integration of Apache Spark with Azure.
+This part covers the foundational concepts and skills essential for data engineering such as the integration of Apache Spark with Azure.
 
 
 ## Outline
