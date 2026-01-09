@@ -7,9 +7,94 @@ Data ingestion is a critical step in the data pipeline because it sets the found
 The data sources for ingestion can include structured data, such as data from a relational database, as well as semi-structured and unstructured data such as text files, logs, social media feeds, and IoT sensors. Data ingestion also involves the application of data governance policies to ensure the accuracy, completeness, and security of the data being ingested.
 
 
-In this task you need to build a data ingestion process to retrieve raw data from OpenSky API and store it in Unity Catalog volumes.
+In this task you need to build a data ingestion process to retrieve raw data from LH OpenAPI and store it in Unity Catalog volumes (/Volumes/`<catalog>`/`<schema>`/`<volume>`/).
 
 ## Outline
+- [Ingest Operational Data](#ingest-operational-data)
+    - [Ingest LH OpenAPI Flight Status by Route](#ingest-lh-openapi-flight-status-by-route)
+- [Ingest Reference Data](#ingest-reference-data)
+    - [Airports](#airports)
+    - [Cities](#cities)
+    - [Countries](#countries)
+    - [Airlines](#airlines)
+    - [Aircrafts](#aircrafts)
+- [Deliverables](#deliverables)
+- [Advanced Challenge (Optional)](#advanced-challenge-optional)
+
+
+
+## Ingest Operational Data
+Dynamic information about the state of our flights. If you want to know which flights operate on a particular day or whether a particular flight is on-time, you'll find it under 'operations'.
+
+
+### Ingest LH OpenAPI Flight Status by Route
+To get this information the following operational data from the Lufthansa Open API should be extracted:
+Flight Status by Route.
+
+In this part, you need to build a pipeline to ingest the operational data from the LH OpenAPI to the Unity Catalog volumes.
+
+**Schedule**: Daily
+
+
+
+## Ingest Reference Data
+Reference data provides access to retrieve list or specific record of Aircrafts, Airlines, Airports, Cities and Countries. In this part, you need to build a pipeline to ingest the reference data from the LH OpenAPI to the Unity Catalog volumes.
+
+
+### Airports:
+The purpose of this task is to import reference data about airports from the open Lufthansa API into our system. This data will provide comprehensive information about airports worldwide, including location, airport name, IATA code, and other relevant details.
+
+**Schedule**: Monthly
+
+
+### Cities:
+The purpose of this task is to import reference data about cities from the open Lufthansa API into our system.
+
+**Schedule**: Monthly
+
+### Countries:
+The purpose of this task is to import reference data about countries from the open Lufthansa API into our system. This data will provide comprehensive information about country code, language code and other relevant details. 
+
+**Schedule**: Monthly
+
+### Airlines
+The purpose of this task is to import reference data about airlines from the open Lufthansa API into our system. This data will provide comprehensive information about airlines and other relevant details.
+
+**Schedule**: Monthly
+
+
+### Aircrafts
+The purpose of this task is to import reference data about aircrafts from the open Lufthansa API into our system. This data will provide comprehensive information about AircraftResource, AircraftSummary, AircraftCode, Name and other relevant details.
+
+**Schedule**: Monthly
+
+
+
+
+## Deliverables:
+- Extract operational and reference data from Lufthansa Open API endpoints for flight status 
+- Configure pipelines with scheduled triggers for data extraction.
+- Validate that the extracted data provides dynamic flight state information, including flight operations and on-time status.
+
+
+
+## Advanced Challenge (Optional)
+
+1. Decide on a strategy to organize code, such that, the business logic is modular and unit testable to the possible extent. One way to make this possible is to, have the business logic outside the notebooks as python scripts, which can then be unit tested and also these functions could be invoked from a orchestrating file. But you can be creative and choose any strategy, which meets this requirement.
+
+1. The automated unit testing should be possible from any environment with the required version of python installed (for example from an Azure DevOps pipeline, or from your colleagues laptop). To make this possible, it should be possible to create a python virtual environment and install all dependencies required for unit testing. One could make use of tools like [uv package manager](https://docs.astral.sh/uv/#installation) for this.
+
+1. Implement a mechanism to handle changes in reference data (e.g., Airports, Airlines). Since this data can change over time, you need to decide on a strategy (SCD Type 1 for overwriting or SCD Type 2 for tracking history) and implement it. Your ingestion process should be able to identify new, updated, or deleted records and apply the changes to your target tables effectively.
+
+**Deliverables**
+
+- Documented the decision as a markdown file.
+- Created a scaffolding folder structure, which includes the folders to place different components (for example, notebooks, python scripts, unit test scripts etc) along with required configuration files (for example .toml file and uv.lock files if you are using uv).
+- Re-usable functions to accelerate development for future use cases.
+- Instructions to use the tool of your choice to manage virtual environments and dependencies as a README.md file.
+- Implementation and demonstration of SCD logic (Type 1 or Type 2) for at least one reference data entity.
+
+<!-- ## Outline
 - [Ingest Flights Data](#ingest-flights-data)
 - [Ingest State Vectors Data](#ingest-state-vectors-data)
 - [Ingest Metadata](#ingest-metadata)
@@ -47,8 +132,8 @@ The aircraft metadata is updated monthly and you can find it here:
 **Schedule**: Monthly
 
 ## Deliverables:
-- The raw data is successfully retrieved from the OpenSky API, ensuring all required data fields are included.
-- The retrieved data is stored in Unity Catalog volumes using the appropriate data model, organized, and formatted correctly.
-- The ingested data is validated to ensure accuracy and up-to-date information.
-- A scheduled data ingestion process is implemented that regularly retrieves the data according to the specified schedules.
-- The data ingestion process is monitored to ensure smooth and reliable operation.
+1. The raw data is successfully retrieved from the OpenSky API, ensuring all required data fields are included.
+1. The retrieved data is stored in Unity Catalog volumes using the appropriate data model, organized, and formatted correctly.
+1. The ingested data is validated to ensure accuracy and up-to-date information.
+1. A scheduled data ingestion process is implemented that regularly retrieves the data according to the specified schedules.
+1. The data ingestion process is monitored to ensure smooth and reliable operation. -->

@@ -1,4 +1,4 @@
-# Part 10: Taking to Production
+# Part 6: Taking to Production (Optional)
 
 1. Refactor (if necessary) the code, so that, same code base is executable in multiple environments. This could include adding parameters, usage of configuration files etc to remove hard coding of environment specific metadata.
 
@@ -47,7 +47,7 @@ It doesn't include infrastructure components like Workspaces, sql warehouses, cl
 1. All credentials stored securely and not to be available in plain text anywhere.
 
 
-💡 Hint: [Asset Bundles](https://docs.databricks.com/en/dev-tools/bundles/index.html) is a feature in public preview which could help in this regard. Feel free to use it if you think it makes sense.
+💡 [Asset Bundles](https://docs.databricks.com/en/dev-tools/bundles/index.html) is a feature in public preview which could help in this regard. Feel free to use it if you think it makes sense.
 
 ## Code refactoring for deployment
 
@@ -78,4 +78,4 @@ Change management in the context of this EPIC means, to be able to make changes 
 1. Azure DevOps CICD pipelines (using YAML files) for change management implemented and tested.
 1. All credentials stored securely and not to be available in plain text anywhere.
 
-**Hint** [Here](https://medium.com/dbsql-sme-engineering/database-change-management-on-lakehouse-with-databricks-sql-and-liquibase-c3c238781616) you have a possible solution to achieve the goal. As always, you don't need to follow this and can find any solution which solves the problem.
+💡[Here](https://medium.com/dbsql-sme-engineering/database-change-management-on-lakehouse-with-databricks-sql-and-liquibase-c3c238781616) you have a possible solution to achieve the goal. As always, you don't need to follow this and can find any solution which solves the problem.

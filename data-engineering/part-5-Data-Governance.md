@@ -1,4 +1,4 @@
-# Part 9: Data Governance
+# Part 5: Data Governance (Optional)
 Data governance has many aspects to it. But we are limiting the scope to access management and data lineage in this part. 
 
 

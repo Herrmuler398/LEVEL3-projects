@@ -13,10 +13,10 @@ Finally, serving data requires careful attention to security and privacy. This m
 In summary, serving is a critical step in the data engineering process, as it enables organizations to leverage their data assets in a variety of ways. By ensuring data is in a usable format, optimizing performance and scalability, and ensuring data security and privacy, organizations can derive maximum value from their data while minimizing risk and ensuring compliance.
 
 
-## Dashboard of data analysis for OpenSky data
+## Dashboard of data analysis for LH OpenAPI data
 As a data engineer, in this task you have to build a dashboard in Databricks SQL Warehouse on the data transformed through the medallion architecture.
 
-The granularity of the data analysis should at hourly level, since data have been ingested each day into the data lake and therefore into the DLT pipelines as well.
+The granularity of the data analysis should be at hourly level, since data have been ingested each day into the data lake and therefore into the DLT pipelines as well.
 
 Please refer to this documentation to get familiar with Data warehousing and Dashboards with Databricks:
 - https://docs.databricks.com/en/sql/index.html

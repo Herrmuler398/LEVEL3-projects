@@ -33,6 +33,7 @@ Resource for SDP:
 - [Silver Layer](#silver-layer)
 - [Gold Layer](#gold-layer)
 - [Deliverables](#deliverables)
+- [Advanced Challenge (Optional)](#advanced-challenge-optional)
 
 
 ## Bronze Layer
@@ -48,15 +49,28 @@ Upon ingestion into the silver layer, data is filtered, cleaned and augmented. T
 ## Gold Layer
 Going into the gold layer the data is transformed for specific use cases and Business level aggregation is applied. At this level business rules are applied and data from different source files or systems may also be joined together.
 
-In our case, we will create two gold tables from joining the silver data sets, as per below data model:
-
-![image](./Gold-Layer-Schema.png)
 
 
 
 ## Deliverables:
 Create a Databricks notebook that implements the Medallion architecture:
-- Ingest raw data into Bronze layer using Auto Loader
-- Transform and clean data into Silver layer
-- Create aggregated Gold layer tables based on the provided schema
-- Document your transformation logic and data quality checks
+1. Ingest raw data into Bronze layer using Auto Loader.
+1. Transform and clean data into Silver layer.
+1. Create aggregated Gold layer tables.
+1. Document your transformation logic and data quality checks.
+
+
+## Advanced Challenge (Optional)
+Optimize the performance and cost of Databricks pipelines.
+
+
+1. Optimize the performance and cost by choosing right size of VMs and clusters for the data pipelines.
+1. Apply any other method to make the pipelines efficient.
+1. Analyse total cost for running pipleines from Azure cost monitoring.
+
+💡Refer [Best practices](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/performance-efficiency/best-practices) and [monitoring techniques](https://learn.microsoft.com/en-us/azure/databricks/clusters/clusters-manage#--monitor-performance)
+
+**Deliverables**
+
+- Document reasoning behind the optimization techniques.
+- Apply the optimization techniques in the data pipelines.

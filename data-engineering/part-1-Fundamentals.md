@@ -6,54 +6,78 @@ This part covers the foundational concepts and skills essential for data enginee
 ## Outline
 
 1. [Azure Databricks](#azure-databricks)
-1. [Azure Data Factory (Optional)](#azure-data-factory-optional)
 1. [Mermaid Code for Modelling Data and Visualizing](#mermaid-code-for-modelling-data-and-visualizing)
-1. [Get familiar with Data - OpenSky](#get-familiar-with-data---opensky)
+1. [Get familiar with Data - LH OpenAPI](#get-familiar-with-data---lh-openapi)
 1. [Exercise](#exercise)
 
 ## Azure Databricks
 
-Using the Databricks Workspace and research the following topics:
+Setup a databricks workspace using the [Databricks Free Edition]((https://docs.databricks.com/en/getting-started/community-edition.html)) and research the following topics:
 
-### Core Platform Fundamentals
-- Databricks UI and workspace navigation
-- Compute clusters (creation, configuration, autoscaling, and cluster policies)
-- Notebooks fundamentals (cells, magic commands, visualizations)
-- Git folders and version control integration
-- Databricks volumes
-- Unity Catalog basics (data governance and security)
+### Platform Basics & UI
+- Databricks UI and workspace navigation - [Source](https://docs.databricks.com/en/workspace/index.html)
 
-### Data Processing & Storage
-- Delta Lake fundamentals (ACID transactions, time travel, optimization)
-- Delta Lake file format and architecture
-- Data ingestion patterns (batch vs streaming)
-- Lakeflow Spark Declarative Pipelines (SDP)
+### Compute & Development environment
+- Compute clusters (creation, configuration, autoscaling, and cluster policies) - [Source](https://docs.databricks.com/en/compute/index.html)
+- Notebooks fundamentals (cells, magic commands, visualizations) - [Source](https://docs.databricks.com/en/notebooks/index.html)
+- Git folders and version control integration - [Source](https://docs.databricks.com/en/repos/index.html)
 
+### Data Management & Storage
+- Unity Catalog - [Source](https://docs.databricks.com/en/data-governance/unity-catalog/index.html)
+- Databricks volumes - [Source](https://docs.databricks.com/en/volumes/index.html)
+- Delta Lake fundamentals - [Source](https://docs.databricks.com/en/delta/index.html)
+### Pipelines, Orchestration & Security
+- Data ingestion patterns (batch vs streaming) - [Source](https://docs.databricks.com/en/ingestion/index.html)
+- Lakeflow Spark Declarative Pipelines (SDPs) - [Source](https://docs.databricks.com/en/dlt/index.html)
+- Lakeflow Jobs - [Source](https://docs.databricks.com/en/jobs/index.html)
+- Secret scopes - [Source](https://docs.databricks.com/en/security/secrets/secret-scopes.html)
 
-## Azure Data Factory (Optional)
-> **Note**: Azure Data Factory is optional for this track. You can complete all exercises using Azure Databricks alone. However, learning ADF provides valuable experience with enterprise data orchestration tools and may be beneficial for production environments.
-
-In this task you are going to get familiar with the Azure Data Factory, which will be used later in the Data Ingestion feature.  
-
-We advise the following resources for you:
-- https://learn.microsoft.com/en-us/azure/data-factory/introduction
-- https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities?tabs=data-factory
-- https://learn.microsoft.com/en-us/azure/data-factory/concepts-parameters-variables
-- https://learn.microsoft.com/en-us/azure/data-factory/concepts-nested-activities
-- https://learn.microsoft.com/en-us/azure/data-factory/concepts-linked-services?tabs=data-factory
-- https://learn.microsoft.com/en-us/azure/data-factory/concepts-datasets-linked-services?tabs=data-factory
-- https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipeline-execution-triggers
-- https://learn.microsoft.com/en-us/training/modules/intro-to-azure-data-factory/
 
 ## Mermaid Code for Modelling Data and Visualizing
 Mermaid code can be used in a variety of contexts, including software development, project management, and more. It is particularly useful for creating diagrams and flowcharts in documentation, as it allows developers and other technical professionals to quickly and easily create visual representations of complex concepts and processes.
 
-We want to get familiar with Mermaid code in order to create ERD models for our data. This will enable us to represent complex relationships and dependencies in a clear and understandable way.
+We want to get familiar with Mermaid code in order to create entity relationship models for our data. This will enable us to represent complex relationships and dependencies in a clear and understandable way.
 
-## Get familiar with Data - OpenSky
+## Get familiar with Data - LH OpenAPI
+In this DE track, you will work with LH OpenAPI data source, which provides real-time flight information, including flight paths, positions, and flight status. 
+
+In the upcoming tasks, you will ingest the data, transform them and load them in the Delta Lake. Before starting these tasks, you need to get familiar with the data sets that will be needed.
+
+For the purpose of this track, you need to look into the following data set APIs:
+- Reference Data (Countries, Cities, Airports, Airlines, Aircraft) - https://developer.lufthansa.com/docs/read/api_details/Reference_Data
+- Flight Status by Route - https://developer.lufthansa.com/docs/read/api_details/operations/Flight_Status_by_City_Pair
+
+
+If you want to explore more data on your own, you can look at the vast APIs that LH OpenAPI offers.
+
+Sources : 
+
+- https://developer.lufthansa.com/docs
+- https://developer.lufthansa.com/page
+
+## Exercise
+
+Create an ER (Entity-Relationship) model for the Lufthansa Open API using the Mermaid modeling language, so that one can visualize and understand the structure and relationships of the data while preparing for future use.
+
+Create an overview of the entities, relationship between the entities and constraints.
+
+**Deliverables**
+
+An ER model that:
+
+- Accurately represents all relevant entities, attributes, and relationships for the following entities: flight status, aircraft, airport, airlines, cities, and countries
+- Is easily understandable, with clear entity names, attribute labels, and relationship annotations
+- Includes cardinality indicators for relationships, providing clarity on the associations between entities
+
+
+## Advanced Challenge (Optional)
+
+Decide the data modelling technique to be used. Consider the pros and cons of each technique, and requirements to arrive at your decision. There is no ONE right answer here, so please compliment your decision with the reasoning. Feel free to make assumptions and document them, when certain things are not clear in the requirement. A good starting point for this process could be [this Databricks blog](https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html).
+
+<!-- ## Get familiar with Data - OpenSky
 In this DE track, you will work with OpenSky data source, which provides real-time flight information, including flight paths, positions, and flight status. 
 
-In the upcoming Features, you will ingest the data, transform them and load them in the Delta Lake. Before starting these tasks, you need to get familiar with the data sets that will be needed.
+In the upcoming parts, you will ingest the data, transform them and load them in the Delta Lake. Before starting these tasks, you need to get familiar with the data sets that will be needed.
 
 For the purpose of this track, you need to look into the following data set APIs:
 - All State Vectors - https://openskynetwork.github.io/opensky-api/rest.html#all-state-vectors
@@ -71,9 +95,12 @@ Also, you can use Postman or any other tool that you are familiar with.
 Sources : 
 
 - https://openskynetwork.github.io/opensky-api/index.html
-- https://opensky-network.org/
+- https://opensky-network.org/ -->
 
-## Exercise
+
+
+
+<!-- ## Exercise
 
 Now that you've explored the OpenSky data sources and learned about Mermaid for data modeling, it's time to put your knowledge into practice.
 
@@ -98,4 +125,4 @@ Create a Mermaid diagram that clearly shows:
 
 This model will serve as the foundation for understanding the data pipeline you'll build in subsequent parts of this track. A well-designed data model will help you make better decisions during data ingestion, transformation, and storage phases.
 
-**Tip**: Start by examining the API responses from OpenSky to identify the actual fields returned by each endpoint. Think about how these different data sources connect to each other in a real-world aviation data context.
+💡Start by examining the API responses from OpenSky to identify the actual fields returned by each endpoint. Think about how these different data sources connect to each other in a real-world aviation data context. -->
