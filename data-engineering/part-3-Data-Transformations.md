@@ -61,16 +61,23 @@ Create a Databricks notebook that implements the Medallion architecture:
 
 
 ## Advanced Challenge (Optional)
-Optimize the performance and cost of Databricks pipelines.
 
+1. Implement a mechanism to handle changes in reference data (e.g., Airports, Airlines). Since this data can change over time, you need to decide on a strategy (SCD Type 1 for overwriting or SCD Type 2 for tracking history) and implement it. Your ingestion process should be able to identify new, updated, or deleted records and apply the changes to your target tables effectively - [Source](https://medium.com/@naveen140882/understanding-scd-type-1-vs-scd-type-2-with-an-example-e188373d5304)
 
-1. Optimize the performance and cost by choosing right size of VMs and clusters for the data pipelines.
-1. Apply any other method to make the pipelines efficient.
-1. Analyse total cost for running pipleines from Azure cost monitoring.
+1. Add data quality expectations and constraints to your pipeline (e.g., null checks, range validations, referential integrity) - [Source](https://docs.databricks.com/en/delta-live-tables/expectations.html) 
 
-💡Refer [Best practices](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/performance-efficiency/best-practices) and [monitoring techniques](https://learn.microsoft.com/en-us/azure/databricks/clusters/clusters-manage#--monitor-performance)
+1. Implement data lineage tracking to trace data flow from source to gold layer (e.g. custom metadata columns) - [Source](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/data-lineage)
+
+1. Add schema evolution handling to manage changes in source data structure.
+
+1. Create data quality metrics dashboard or reports showing validation results.
+
+1. Implement error handling and quarantine tables for records that fail validation.
+
 
 **Deliverables**
 
-- Document reasoning behind the optimization techniques.
-- Apply the optimization techniques in the data pipelines.
+- Implement appropriate merge logic for target tables (e.g., SCD Type 1/2 for dimension tables, append/upsert for fact tables).
+- Document data quality rules and validation logic.
+- Implement quality checks in each layer of the medallion architecture.
+- Create a report or visualization showing data quality metrics.
