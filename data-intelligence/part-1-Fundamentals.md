@@ -40,6 +40,9 @@ If you want to explore more data on your own, you can look at the vast APIs that
 - [developer docs](https://developer.lufthansa.com/docs)
 - [developer page](https://developer.lufthansa.com/page)
 
+**Important:** If you are unable to register for a Lufthansa OpenAPI account or generate your own `client_id` and `client_secret`, you can use the [**LH Proxy**](LH-proxy.md) instead.  
+
+This proxy handles authentication for you, so you do **not** need your own credentials. You only need a password to access it.
 
 ### Learn Mermaid & ER (Entity-Relationship) modeling
 
